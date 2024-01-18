@@ -77,8 +77,8 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\android-studio\bin"
 # # Android Studio variables
 # # $Env:STUDIO_VM_OPTIONS="$DriveRoot\common\config\studio.vmoptions"	# Sets the location of the studio.vmoptions file. This file contains settings that affect the performance characteristics of the Java HotSpot Virtual Machine. This file can also be accessed from within Android Studio. See Customize your VM options.
 # $Env:STUDIO_PROPERTIES="$DriveRoot\common\config\studio.properties"	# Sets the location of the idea.properties file. This file lets you customize Android Studio IDE properties, such as the path to user installed plugins and the maximum file size supported by the IDE. See Customize your IDE properties.
-# $Env:STUDIO_JDK=$Env:JAVA_HOME	                                    # Sets the location of the JDK that Android Studio runs in. When you launch the IDE, it checks the STUDIO_JDK, JDK_HOME, and JAVA_HOME environment variables, in that order.
-# $Env:STUDIO_GRADLE_JDK=$Env:JAVA_HOME	                            # Sets the location of the JDK that Android Studio uses to start the Gradle daemon. When you launch the IDE, it first checks STUDIO_GRADLE_JDK. If STUDIO_GRADLE_JDK is not defined, the IDE uses the value set in the project structure settings.
+$Env:STUDIO_JDK=$Env:JAVA_HOME	                                    # Sets the location of the JDK that Android Studio runs in. When you launch the IDE, it checks the STUDIO_JDK, JDK_HOME, and JAVA_HOME environment variables, in that order.
+$Env:STUDIO_GRADLE_JDK=$Env:JAVA_HOME	                            # Sets the location of the JDK that Android Studio uses to start the Gradle daemon. When you launch the IDE, it first checks STUDIO_GRADLE_JDK. If STUDIO_GRADLE_JDK is not defined, the IDE uses the value set in the project structure settings.
 
 # Adding .NET to PATH
 $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\dotnet-sdk-8.0.100-win-x64"
