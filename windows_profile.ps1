@@ -50,12 +50,14 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\winpython\WPy64-31160\python-3
 # This is reusing the NodeJS installed as a part of WinPython to save on space
 $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\winpython\WPy64-31160\n"
 
+#Setting up JAVA_HOME
+# For a ref on how the difference is reflected in `java --version` output, see https://stackoverflow.com/a/48336582
+# $Env:JAVA_HOME = "$DriveRoot\windows\sdks\open_jsk\jdk-21.0.1+12"  # This is OpenJDK. Keeping this as an option but disabled as Android STudio reccomends against it.
+$Env:JAVA_HOME = "$DriveRoot\windows\sdks\oracle_jdk\jdk-21.0.2"
+
 # Adding Java to PATH
 # This is meant for Android development.
-$Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\jdk-21.0.1+12\bin"
-
-#Setting up JAVA_HOME
-$Env:JAVA_HOME = "$DriveRoot\windows\sdks\jdk-21.0.1+12"
+$Env:Path = $Env:Path + ";$Env:JAVA_HOME\bin"
 
 # Adding the Android SDK to PATH.
 # This path must be the *parent* of the `cmdline-tools` folder.
