@@ -27,6 +27,12 @@ Set-PSReadLineOption -HistorySavePath $DriveRoot\windows\sys32\$($Host.Name)_his
 
 ################################################################################
 
+# PATH related and other shennagigans
+
+# Backing up system PATH
+# This is meaningless for now, but I may want to look into restoring the old PATH for some system stuff that I may need.
+$SystemPATH=$Env:PATH
+
 If ($IsWindows) {
 	# Windows specific utils!
 
