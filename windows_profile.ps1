@@ -98,6 +98,8 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\w64devkit\bin"
 
 # Adding Vivaldi to PATH
 $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\Vivaldi\Application"
+# Setting a seperate variable here so that Flutter uses Vivaldi for debugging purposes
+$Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\Vivaldi\Application\vivaldi.exe"
 
 # Setting Local App Data folder
 $Env:LOCALAPPDATA = "$DriveRoot\windows\appdata\local"
