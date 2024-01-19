@@ -17,9 +17,6 @@ $Env:PSModulePath = "$DriveRoot\common\profiles\ps_modules"
 $Env:GIT_CONFIG_GLOBAL="$DriveRoot\common\git\.gitconfig"
 # $Env:GIT_CONFIG_SYSTEM="$DriveRoot\common\system\git"
 
-# Add this profiles directory to the `git` safe list
-git config --global --add safe.directory "$DriveRoot/common/profiles"
-
 # Setting a location to store all command history in.
 # This avoids both - interference from/with host, and loss of history when switching systems.
 # See https://learn.microsoft.com/en-us/powershell/module/psreadline/set-psreadlineoption?view=powershell-7.4#-historysavepath for official docs.
@@ -60,6 +57,9 @@ Else {
 # Post Loads
 
 # Utility Functions
+
+# Add this profiles directory to the `git` safe list
+git config --global --add safe.directory "$DriveRoot/common/profiles"
 
 # From search/search.psm1
 Set-Alias -Name search -Value Search-InBrowser
