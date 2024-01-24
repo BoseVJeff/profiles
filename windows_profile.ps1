@@ -173,4 +173,4 @@ flutter config --android-sdk "$DriveRoot\windows\sdks\commandlinetools-win" | Ou
 flutter config --android-studio-dir "$DriveRoot\windows\apps\android-studio" | Out-Null
 
 # This is the windows equivalent of `$HOME` so only use this if all else fails
-# $Env:USERPROFILE="D:\windows\user"
+$Env:USERPROFILE="D:\windows\user"
