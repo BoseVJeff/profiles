@@ -10,4 +10,14 @@ function Get-7ZipVersion {
     Write-Output (($a -Split "`n")[1] -Split " ")[2]
 }
 
-Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion
+function Get-AndroidStudioVersion {
+    $a=$(studio.bat --version)
+    Write-Output ($a -Split "`n")[-2]
+}
+
+function Get-JustVersion {
+    $a=$(just --version)
+    Write-Output $a
+}
+
+Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion
