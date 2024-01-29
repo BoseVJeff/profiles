@@ -20,4 +20,13 @@ function Get-JustVersion {
     Write-Output $a
 }
 
-Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion
+function Get-DotnetVersion {
+    Write-Output "$(dotnet --version)"
+}
+
+function Get-SQLiteVersion {
+    $a=$(sqlite3 --version)
+    Write-Output ($a -Split " ")[0]
+}
+
+Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion, Get-DotnetVersion, Get-SQLiteVersion
