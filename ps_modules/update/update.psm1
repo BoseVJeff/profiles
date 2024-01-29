@@ -26,7 +26,18 @@ function Get-DotnetVersion {
 
 function Get-SQLiteVersion {
     $a=$(sqlite3 --version)
+    # Expected output:
+    # 3.42.0 2023-05-16 12:36:15 831d0fb2836b71c9bc51067c49fee4b8f18047814f2ff22d817d25195cf350b0
     Write-Output ($a -Split " ")[0]
 }
 
-Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion, Get-DotnetVersion, Get-SQLiteVersion
+function Get-GccVersion {
+    $a=$(gcc --version)
+    # Expected output:
+    # gcc.exe (GCC) 13.2.0
+    # Copyright (C) 2023 Free Software Foundation, Inc.
+    # This is free software; see the source for copying conditions.  There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+    Write-Output (($a -Split "`n")[0] -Split " ")[2]
+}
+
+Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion, Get-DotnetVersion, Get-SQLiteVersion, Get-GccVersion
