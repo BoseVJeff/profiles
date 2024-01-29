@@ -146,6 +146,13 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\7z2301-extra"
 
 ################################################################################
 
+# Ghostwriter
+
+# Adding Ghostwriter to PATH
+$Env:Path = $Env:Path + ";$DriveRoot\windows\apps\ghostwriter"
+
+################################################################################
+
 # C/C++/Fortran
 
 # Adding w64devkit to PATH
