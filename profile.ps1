@@ -64,6 +64,8 @@ git config --global --add safe.directory "$DriveRoot/common/profiles"
 # From search/search.psm1
 Set-Alias -Name search -Value Search-InBrowser
 
+Set-Alias -Name searchcli -Value SearchDDG-Scrape
+
 Set-Alias -Name ai -Value AskGemini-Single
 
 # PING
