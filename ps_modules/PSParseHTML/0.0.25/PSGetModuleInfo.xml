@@ -1,0 +1,161 @@
+<Objs Version="1.1.0.1" xmlns="http://schemas.microsoft.com/powershell/2004/04">
+  <Obj RefId="0">
+    <TN RefId="0">
+      <T>Microsoft.PowerShell.Commands.PSRepositoryItemInfo</T>
+      <T>System.Management.Automation.PSCustomObject</T>
+      <T>System.Object</T>
+    </TN>
+    <MS>
+      <S N="Name">PSParseHTML</S>
+      <Version N="Version">0.0.25</Version>
+      <S N="Type">Module</S>
+      <S N="Description">Module that allows to manipulate, parse, format and optimize HTML, JavaScript and CSS</S>
+      <S N="Author">Przemyslaw Klys</S>
+      <S N="CompanyName">Przemyslaw.Klys</S>
+      <S N="Copyright">(c) Przemyslaw Klys. All rights reserved.</S>
+      <DT N="PublishedDate">2023-01-15T18:30:38+05:30</DT>
+      <Obj N="InstalledDate" RefId="1">
+        <DT>2024-01-29T21:04:11.2871966+05:30</DT>
+        <MS>
+          <Obj N="DisplayHint" RefId="2">
+            <TN RefId="1">
+              <T>Microsoft.PowerShell.Commands.DisplayHintType</T>
+              <T>System.Enum</T>
+              <T>System.ValueType</T>
+              <T>System.Object</T>
+            </TN>
+            <ToString>DateTime</ToString>
+            <I32>2</I32>
+          </Obj>
+        </MS>
+      </Obj>
+      <Nil N="UpdatedDate" />
+      <Nil N="LicenseUri" />
+      <URI N="ProjectUri">https://github.com/EvotecIT/PSParseHTML</URI>
+      <URI N="IconUri">https://evotec.xyz/wp-content/uploads/2018/12/PSWriteHTML.png</URI>
+      <Obj N="Tags" RefId="3">
+        <TN RefId="2">
+          <T>System.Object[]</T>
+          <T>System.Array</T>
+          <T>System.Object</T>
+        </TN>
+        <LST>
+          <S>HTML</S>
+          <S>WWW</S>
+          <S>JavaScript</S>
+          <S>CSS</S>
+          <S>Windows</S>
+          <S>MacOS</S>
+          <S>Linux</S>
+          <S>PSModule</S>
+          <S>PSEdition_Desktop</S>
+          <S>PSEdition_Core</S>
+        </LST>
+      </Obj>
+      <Obj N="Includes" RefId="4">
+        <TN RefId="3">
+          <T>System.Collections.Hashtable</T>
+          <T>System.Object</T>
+        </TN>
+        <DCT>
+          <En>
+            <S N="Key">Function</S>
+            <Obj N="Value" RefId="5">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Convert-HTMLToText</S>
+                <S>ConvertFrom-HTML</S>
+                <S>ConvertFrom-HTMLAttributes</S>
+                <S>ConvertFrom-HtmlTable</S>
+                <S>Format-CSS</S>
+                <S>Format-HTML</S>
+                <S>Format-JavaScript</S>
+                <S>Optimize-CSS</S>
+                <S>Optimize-HTML</S>
+                <S>Optimize-JavaScript</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">RoleCapability</S>
+            <Obj N="Value" RefId="6">
+              <TNRef RefId="2" />
+              <LST />
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Command</S>
+            <Obj N="Value" RefId="7">
+              <TNRef RefId="2" />
+              <LST>
+                <S>Convert-HTMLToText</S>
+                <S>ConvertFrom-HTML</S>
+                <S>ConvertFrom-HTMLAttributes</S>
+                <S>ConvertFrom-HtmlTable</S>
+                <S>Format-CSS</S>
+                <S>Format-HTML</S>
+                <S>Format-JavaScript</S>
+                <S>Optimize-CSS</S>
+                <S>Optimize-HTML</S>
+                <S>Optimize-JavaScript</S>
+              </LST>
+            </Obj>
+          </En>
+          <En>
+            <S N="Key">Cmdlet</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">DscResource</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+          <En>
+            <S N="Key">Workflow</S>
+            <Ref N="Value" RefId="6" />
+          </En>
+        </DCT>
+      </Obj>
+      <Nil N="PowerShellGetFormatVersion" />
+      <Nil N="ReleaseNotes" />
+      <Obj N="Dependencies" RefId="8">
+        <TNRef RefId="2" />
+        <LST />
+      </Obj>
+      <S N="RepositorySourceLocation">https://www.powershellgallery.com/api/v2</S>
+      <S N="Repository">PSGallery</S>
+      <S N="PackageManagementProvider">NuGet</S>
+      <Obj N="AdditionalMetadata" RefId="9">
+        <TN RefId="4">
+          <T>System.Management.Automation.PSCustomObject</T>
+          <T>System.Object</T>
+        </TN>
+        <MS>
+          <S N="copyright">(c) Przemyslaw Klys. All rights reserved.</S>
+          <S N="description">Module that allows to manipulate, parse, format and optimize HTML, JavaScript and CSS</S>
+          <S N="requireLicenseAcceptance">False</S>
+          <S N="isLatestVersion">True</S>
+          <S N="isAbsoluteLatestVersion">True</S>
+          <S N="versionDownloadCount">9350</S>
+          <S N="downloadCount">24451</S>
+          <S N="packageSize">2227612</S>
+          <S N="published">15-01-2023 18:30:38 +05:30</S>
+          <S N="created">15-01-2023 18:30:38 +05:30</S>
+          <S N="lastUpdated">29-01-2024 15:29:50 +05:30</S>
+          <S N="tags">HTML WWW JavaScript CSS Windows MacOS Linux PSModule PSEdition_Desktop PSEdition_Core PSFunction_Convert-HTMLToText PSCommand_Convert-HTMLToText PSFunction_ConvertFrom-HTML PSCommand_ConvertFrom-HTML PSFunction_ConvertFrom-HTMLAttributes PSCommand_ConvertFrom-HTMLAttributes PSFunction_ConvertFrom-HtmlTable PSCommand_ConvertFrom-HtmlTable PSFunction_Format-CSS PSCommand_Format-CSS PSFunction_Format-HTML PSCommand_Format-HTML PSFunction_Format-JavaScript PSCommand_Format-JavaScript PSFunction_Optimize-CSS PSCommand_Optimize-CSS PSFunction_Optimize-HTML PSCommand_Optimize-HTML PSFunction_Optimize-JavaScript PSCommand_Optimize-JavaScript PSIncludes_Function</S>
+          <S N="developmentDependency">False</S>
+          <S N="updated">2024-01-29T15:29:50Z</S>
+          <S N="NormalizedVersion">0.0.25</S>
+          <S N="Authors">Przemyslaw Klys</S>
+          <S N="IsPrerelease">false</S>
+          <S N="ItemType">Module</S>
+          <S N="FileList">PSParseHTML.nuspec|PSParseHTML.Libraries.ps1|PSParseHTML.psd1|PSParseHTML.psm1|Lib\Core\AngleSharp.Css.dll|Lib\Core\AngleSharp.dll|Lib\Core\HtmlAgilityPack.dll|Lib\Core\Jsbeautifier.dll|Lib\Core\NUglify.dll|Lib\Default\AngleSharp.Css.dll|Lib\Default\AngleSharp.dll|Lib\Default\HtmlAgilityPack.dll|Lib\Default\Jsbeautifier.dll|Lib\Default\NUglify.dll|Lib\Default\System.Buffers.dll|Lib\Default\System.Text.Encoding.CodePages.dll</S>
+          <S N="GUID">f0387960-7034-4918-a1e1-d5847cbf90df</S>
+          <S N="PowerShellVersion">5.1</S>
+          <S N="DotNetFrameworkVersion">4.7.2</S>
+          <S N="CompanyName">Evotec</S>
+        </MS>
+      </Obj>
+      <S N="InstalledLocation">C:\Users\jeffb\Documents\PowerShell\Modules\PSParseHTML\0.0.25</S>
+    </MS>
+  </Obj>
+</Objs>
