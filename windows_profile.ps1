@@ -161,6 +161,14 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\w64devkit\bin"
 
 ################################################################################
 
+# Go-lang
+
+# Adding Go to PATH
+$Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\go\bin"
+# Setting GOPATH
+
+################################################################################
+
 # Vivaldi
 
 # Adding Vivaldi to PATH
