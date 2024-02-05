@@ -173,8 +173,11 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\go\bin"
 
 # Adding Vivaldi to PATH
 $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\Vivaldi\Application"
+# Setting a seperate variable here so that Flutter uses Chrome for Testing for debugging purposes
+$Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\chrome-win64\chrome.exe"
+
 # Setting a seperate variable here so that Flutter uses Vivaldi for debugging purposes
-$Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\Vivaldi\Application\vivaldi.exe"
+# $Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\Vivaldi\Application\vivaldi.exe"
 
 ################################################################################
 
