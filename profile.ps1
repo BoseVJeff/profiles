@@ -56,6 +56,14 @@ Else {
 
 # Post Loads
 
+# Platform-independent SDKs
+
+# Adding Maven to PATH
+$Env:Path = $Env:Path + ";$DriveRoot\common\sdks\apache-maven-3.9.6\bin"
+
+# Adding Gradle to PATH
+$Env:Path = $Env:Path + ";$DriveRoot\common\sdks\gradle-8.6\bin"
+
 # Utility Functions
 
 # Add this profiles directory to the `git` safe list
