@@ -1,3 +1,27 @@
+# Most URLs taken from default Vivaldi settings unless noted otherwise
+
+# Bing search URLs
+# Search: https://www.bing.com/search?FORM=INCOH2&PC=1VIV&PTAG=ICO-c9d0fc87&q=%s
+# Search autocomplete: https://www.bing.com/osjson.aspx?query=%s&language={language}
+# Image search: https://www.bing.com/images/detail/search?iss=sbiupload&{bing:Referral}#enterInsights
+# Image search POST params: imageBin={google:imageThumbnailBase64}
+
+# Yahoo search URLs
+# Search: https://in.search.yahoo.com/yhs/search?hspart=iry&hsimp=yhs-fullyhosted_009&type=dpp_vvldnu_00_00&param1=1&param2=pa%3Ddowncoll%26b%3DVivaldi&p=%s
+
+# DuckDuckGo search URLs
+# Search: https://start.duckduckgo.com/?q=%s&{ddg:Referral}
+# Search autocomplete: https://duckduckgo.com/ac/?q=%s&type=list
+
+# Google search URLs
+# Search: {google:baseURL}search?q=%s&{google:originalQueryForSuggestion}{google:prefetchSource}{google:sourceId}{google:contextualSearchVersion}ie={inputEncoding}
+# Image Search: https://www.google.com/searchbyimage/upload
+# Image search POST params: encoded_image={google:imageThumbnail},image_url={google:imageURL},sbisrc={google:imageSearchSource},original_width={google:imageOriginalWidth},original_height={google:imageOriginalHeight}
+
+# Wikipedia Search URLs
+# Search: https://en.wikipedia.org/wiki/Special:Search?search=%s
+# Search autocomplete: https://en.wikipedia.org/w/api.php?action=opensearch&search=%s
+
 # Searching the internet in the browser
 function Search-InBrowser {
 	param (
