@@ -183,8 +183,14 @@ $Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\chrome-win64\chrome.exe"
 
 # Misc
 
+# For a seemingly complete list of windows variables, refer to https://www.thewindowsclub.com/system-user-environment-variables-windows#:~:text=List%20of%20environment%20variables%20in%20Windows%2011/10
+
 # Setting Local App Data folder
 $Env:LOCALAPPDATA = "$DriveRoot\windows\appdata\local"
+
+# Setting app data folder
+# This is usually C:\Users\<username>\AppData\Roaming
+$Env:APPDATA="$DriveRoot\windows\appdata\roaming"
 
 # Additional Flutter setup
 flutter config --android-sdk "$DriveRoot\windows\sdks\commandlinetools-win" | Out-Null
