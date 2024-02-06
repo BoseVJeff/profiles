@@ -146,6 +146,13 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\7z2301-extra"
 
 ################################################################################
 
+# cURL
+
+# Adding cURL to PATH
+$Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\curl-8.6.0_1-win64-mingw\bin"
+
+################################################################################
+
 # Ghostwriter
 
 # Adding Ghostwriter to PATH
