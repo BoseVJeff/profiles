@@ -1,8 +1,6 @@
 # Rename this file to `tokens.psm1` and replace the placeholders in `<>` with the appropriate text.
 
-function Get-GeminiApiKey {
+function SetApiKeys {
     # Your API Key should be available by signing into your Google account and navigating to `https://ai.google.dev/`.
-    Write-Output "<Your Gemini API Key>"
+    $Env:GeminiApiKey="AIzaSyAwRViKJjzztyAAIuDef-ohI2Urnn-Q72s"
 }
-
-Export-ModuleMember -Function Get-GeminiApiKey

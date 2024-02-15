@@ -56,6 +56,9 @@ Else {
 
 # Post Loads
 
+# Load all API keys as Environment variables
+SetApiKeys
+
 # Platform-independent SDKs
 
 # Adding Maven to PATH

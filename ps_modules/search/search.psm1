@@ -127,7 +127,7 @@ function AskGemini-Single {
 		}]
 	}"
 
-	$res=Invoke-RestMethod -Uri "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$(Get-GeminiApiKey)" -Method "POST" -ContentType "application/json" -Body $body;
+	$res=Invoke-RestMethod -Uri "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=$($Env:GeminiApiKey)" -Method "POST" -ContentType "application/json" -Body $body;
 
 	Show-Markdown -InputObject $res.candidates[0].content.parts[0].text
 }
