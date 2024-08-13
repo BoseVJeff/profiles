@@ -233,6 +233,11 @@ function Get-ChromeTestingVersion {
     return $versionObj.ToString();
 }
 
+function Get-GitVersion {
+    $a = $(git --version);
+    return "$($a.Split(' ')[-1].Split('.')[0..2] -join ".")"
+}
+
 # Powershell
 function Update-Powershell {
 
@@ -348,7 +353,6 @@ function Update-Just {
     else {
         Write-Host "Upgrading $($currentVersion.toShortString()) -> $($latestVersion.toShortString())"
 
-        # $powershellReleaseLink = "https://update.code.visualstudio.com/$($latestVersion.toShortString())/win32-x64-archive/stable"
         $powershellReleaseLink = "https://github.com/casey/just/releases/download/$($latestVersion.toShortString())/just-$($latestVersion.toShortString())-x86_64-pc-windows-msvc.zip"
         
         if (-not (Test-Path "$tmpFolder/just-$($latestVersion.toShortString()).zip")) {
@@ -368,7 +372,6 @@ function Update-Just {
 }
 
 # Chrome for Testing
-
 function Update-ChromeTesting {
     # Pointing to the parent as the zip file has a top-level `chrome-win64` directory
     $location = "\windows\apps"
@@ -405,7 +408,44 @@ function Update-ChromeTesting {
     }
 }
 
-Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion, Get-DotnetVersion, Get-SQLiteVersion, Get-GccVersion, Get-PowershellVersion, Get-ChromeTestingVersion, Update-Powershell, Update-VSCode, Update-VSCodeCLI, Update-Just, Update-ChromeTesting, Format-VersionString, Format-ChromeVersionString
+# Git Portable for Windows
+
+function Update-Git {
+    $location = "/windows/sdks/git"
+
+    $currentVersion = Format-VersionString "$(Get-GitVersion)";
+    
+    $latestVersion = Invoke-WebRequest -Uri "https://api.github.com/repos/git/git/tags" | ConvertFrom-Json | Select-Object -Property name | ForEach-Object { $_.name.Split("v")[1] } | ForEach-Object { Format-VersionString $_ } | Where-Object { -not $_.isPrerelease() } | Sort-Object -Bottom 1
+
+    if ($currentVersion -eq $latestVersion) {
+        Write-Host "Current version is the latest version ($currentVersion)"
+    }
+    else {
+        Write-Host "Performing upgrade: $($currentVersion.toShortString()) -> $($latestVersion.toShortString())";
+        
+        $downloadLink = "https://github.com/git-for-windows/git/releases/download/v$($latestVersion.toShortString()).windows.1/PortableGit-$($latestVersion.toShortString())-64-bit.7z.exe";
+        
+        $archivePath = "$tmpFolder/git-$($latestVersion.toShortString()).7z.exe"
+        
+        if (Test-Path $archivePath) {
+            Write-Host "Found existing archive. Reusing...";
+        }
+        else {
+            Write-Host "Downloading from $downloadLink to $archivePath";
+            Invoke-WebRequest -Uri $downloadLink -OutFile $archivePath
+        }
+        
+        & $archivePath -oE:/windows/sdks/git -y -aoa
+        
+        $currentVersion = Format-VersionString "$(Get-GitVersion)";
+        if ($currentVersion -eq $latestVersion) {
+            Write-Host "Upgraded to latest version. Removing downloaded archive...";
+            Remove-Item -Path $archivePath;
+        }
+    }
+}
+
+Export-ModuleMember -Function Get-VSCodeVersion, Get-7ZipVersion, Get-AndroidStudioVersion, Get-JustVersion, Get-DotnetVersion, Get-SQLiteVersion, Get-GccVersion, Get-PowershellVersion, Get-ChromeTestingVersion, Get-GitVersion, Update-Powershell, Update-VSCode, Update-VSCodeCLI, Update-Just, Update-ChromeTesting, Update-Git, Format-VersionString, Format-ChromeVersionString
 
 # Check url status:
 # $req = [system.Net.WebRequest]::Create($url)
