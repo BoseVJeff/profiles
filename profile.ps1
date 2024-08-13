@@ -14,7 +14,7 @@ $Env:PSModulePath = "$DriveRoot\common\profiles\ps_modules"
 
 # Setting paths to `.gitconfig`s
 # Remember to point to the file and not to the folder
-$Env:GIT_CONFIG_GLOBAL="$DriveRoot\common\git\.gitconfig"
+$Env:GIT_CONFIG_GLOBAL = "$DriveRoot\common\git\.gitconfig"
 # $Env:GIT_CONFIG_SYSTEM="$DriveRoot\common\system\git"
 
 # Setting a location to store all command history in.
@@ -28,28 +28,28 @@ Set-PSReadLineOption -HistorySavePath $DriveRoot\windows\sys32\$($Host.Name)_his
 
 # Backing up system PATH
 # This is meaningless for now, but I may want to look into restoring the old PATH for some system stuff that I may need.
-$SystemPATH=$Env:PATH
+$SystemPATH = $Env:PATH
 
 If ($IsWindows) {
-	# Windows specific utils!
+    # Windows specific utils!
 
-	# Loading the windows-specific profile
-	# Execution method taken from https://superuser.com/a/1524149
-	$script = $PSScriptRoot + "\windows_profile.ps1"
-	. $script
+    # Loading the windows-specific profile
+    # Execution method taken from https://superuser.com/a/1524149
+    $script = $PSScriptRoot + "\windows_profile.ps1"
+    . $script
 
 }
 ElseIf ($IsLinux) {
-	Write-Output "Running on some Linux!"
+    Write-Output "Running on some Linux!"
 }
 ElseIf ($IsMacOs) {
-	Write-Output "Running on MacOS!"
+    Write-Output "Running on MacOS!"
 }
 ElseIf ($PSVersionTable.Platform -eq "Unix") {
-	Write-Output "Running some unknown variant of Unix!"
+    Write-Output "Running some unknown variant of Unix!"
 }
 Else {
-	Write-Output "Running some unknown OS!"
+    Write-Output "Running some unknown OS!"
 }
 
 ################################################################################
@@ -65,7 +65,7 @@ SetApiKeys
 $Env:Path = $Env:Path + ";$DriveRoot\common\sdks\apache-maven-3.9.6\bin"
 
 # Adding Gradle to PATH
-$Env:Path = $Env:Path + ";$DriveRoot\common\sdks\gradle-8.6\bin"
+$Env:Path = $Env:Path + ";$DriveRoot\common\sdks\gradle-8.7\bin"
 
 # Utility Functions
 
@@ -84,28 +84,28 @@ Set-Alias -Name ping -Value Test-Connection
 
 # Get executable location
 function which {
-	param (
-		[String]$execName
-	)
-	# TODO: Wrap this in a try..catch
+    param (
+        [String]$execName
+    )
+    # TODO: Wrap this in a try..catch
 	(Get-Command $execName @args).Source
 }
 
 # Modifying the system prompt
 function prompt {
-	# The start of the prompt.
-	# This is the string `PPS` to stand for `Portable PowerShell`.
-	# This also seperates it from the regular `PS` prompt of the system Powershell.
-	$prompt = "PPS"
+    # The start of the prompt.
+    # This is the string `PPS` to stand for `Portable PowerShell`.
+    # This also seperates it from the regular `PS` prompt of the system Powershell.
+    $prompt = "PPS"
 
-	# Adding an indicator for the current directory that the shell is in.
-	$prompt = "$prompt $(Get-Location)"
+    # Adding an indicator for the current directory that the shell is in.
+    $prompt = "$prompt $(Get-Location)"
 
-	# Prepending an `!` if the last command returned an error or a non-zero exit code.
-	if ($? -Eq $false) { $prompt = "! $prompt" }
+    # Prepending an `!` if the last command returned an error or a non-zero exit code.
+    if ($? -Eq $false) { $prompt = "! $prompt" }
 
-	# Adding `1+context_dpeth` `>` to the start of the prompt.
-	# This is on a new line as the path itself can be long.
-	$prompt = "$prompt`n$('>'*($NestedPromptLevel + 1)) "
-	Write-Output "$prompt"
+    # Adding `1+context_dpeth` `>` to the start of the prompt.
+    # This is on a new line as the path itself can be long.
+    $prompt = "$prompt`n$('>'*($NestedPromptLevel + 1)) "
+    Write-Output "$prompt"
 }

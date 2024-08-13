@@ -12,7 +12,7 @@ $Env:Path = ""
 # PowerShell
 
 # Adding PowerShell to PATH
-$Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\PowerShell-7.4.0-win-x64"
+$Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\PowerShell"
 
 ################################################################################
 
@@ -113,8 +113,8 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\android-studio\bin"
 # # Android Studio variables
 # # $Env:STUDIO_VM_OPTIONS="$DriveRoot\common\config\studio.vmoptions"	# Sets the location of the studio.vmoptions file. This file contains settings that affect the performance characteristics of the Java HotSpot Virtual Machine. This file can also be accessed from within Android Studio. See Customize your VM options.
 # $Env:STUDIO_PROPERTIES="$DriveRoot\common\config\studio.properties"	# Sets the location of the idea.properties file. This file lets you customize Android Studio IDE properties, such as the path to user installed plugins and the maximum file size supported by the IDE. See Customize your IDE properties.
-$Env:STUDIO_JDK=$Env:JAVA_HOME	                                    # Sets the location of the JDK that Android Studio runs in. When you launch the IDE, it checks the STUDIO_JDK, JDK_HOME, and JAVA_HOME environment variables, in that order.
-$Env:STUDIO_GRADLE_JDK=$Env:JAVA_HOME	                            # Sets the location of the JDK that Android Studio uses to start the Gradle daemon. When you launch the IDE, it first checks STUDIO_GRADLE_JDK. If STUDIO_GRADLE_JDK is not defined, the IDE uses the value set in the project structure settings.
+$Env:STUDIO_JDK = $Env:JAVA_HOME	                                    # Sets the location of the JDK that Android Studio runs in. When you launch the IDE, it checks the STUDIO_JDK, JDK_HOME, and JAVA_HOME environment variables, in that order.
+$Env:STUDIO_GRADLE_JDK = $Env:JAVA_HOME	                            # Sets the location of the JDK that Android Studio uses to start the Gradle daemon. When you launch the IDE, it first checks STUDIO_GRADLE_JDK. If STUDIO_GRADLE_JDK is not defined, the IDE uses the value set in the project structure settings.
 
 ################################################################################
 
@@ -181,7 +181,7 @@ $Env:Path = $Env:Path + ";$DriveRoot\windows\sdks\go\bin"
 # Adding Vivaldi to PATH
 $Env:Path = $Env:Path + ";$DriveRoot\windows\apps\Vivaldi\Application"
 # Setting a seperate variable here so that Flutter uses Chrome for Testing for debugging purposes
-$Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\chrome-win64\chrome.exe"
+$Env:CHROME_EXECUTABLE = "$DriveRoot\windows\apps\chrome-win64\chrome.exe"
 
 # Setting a seperate variable here so that Flutter uses Vivaldi for debugging purposes
 # $Env:CHROME_EXECUTABLE="$DriveRoot\windows\apps\Vivaldi\Application\vivaldi.exe"
@@ -197,11 +197,11 @@ $Env:LOCALAPPDATA = "$DriveRoot\windows\appdata\local"
 
 # Setting app data folder
 # This is usually C:\Users\<username>\AppData\Roaming
-$Env:APPDATA="$DriveRoot\windows\appdata\roaming"
+$Env:APPDATA = "$DriveRoot\windows\appdata\roaming"
 
 # Additional Flutter setup
 flutter config --android-sdk "$DriveRoot\windows\sdks\commandlinetools-win" | Out-Null
 flutter config --android-studio-dir "$DriveRoot\windows\apps\android-studio" | Out-Null
 
 # This is the windows equivalent of `$HOME` so only use this if all else fails
-$Env:USERPROFILE="D:\windows\user"
+$Env:USERPROFILE = "D:\windows\user"
